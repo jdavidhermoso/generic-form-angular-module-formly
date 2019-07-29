@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormField } from '../../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormsConfigService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+  }
 
-  public getFormConfig(): Observable<FormlyFieldConfig[]> {
-    const formConfig: FormlyFieldConfig[] = [
+  public getFormConfig(): Observable<FormField[]> {
+    const formConfig: FormField[] = [
       {
         key: 'email',
         type: 'input',
